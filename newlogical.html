@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="newlogical.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div id="container">
+
+        <div id="norDiv">
+            <label class="label" for="norGate">NOR</label>
+            <input type="text" class="design" id="nor1" name="norGate1" placeholder="Enter Waveform 1">
+            <input type="text" class="design" id="nor2" name="norGate2" placeholder="Enter Waveform 2">
+            <button onclick="norOut()">Calculate</button>
+            <input type="text" class="design" id="norOut" placeholder="Output Waveform">
+            <div class="line"></div>
+            <svg id="svgNor">
+            </svg>
+        </div>
+        <div id="xorDiv">
+            <label class="label" for="xorGate">XOR</label>
+            <input type="text" class="design" id="xor1" name="xorGate" placeholder="Enter Waveform 1">
+            <input type="text" class="design" id="xor2" name="xorGate" placeholder="Enter Waveform 2">
+            <button onclick="xorOut()">Calculate</button>
+            <input type="text" class="design" id="xorOut" placeholder="Output Waveform">
+            <div class="line"></div>
+            <svg id="svgXor"></svg>
+        </div>
+        <div id="notDiv">
+            <label class="label" for="notGate">NOT</label>
+            <input type="text" class="design" id="not1" name="notGate" placeholder="Enter Waveform">
+            <button onclick="notOut()">Calculate</button>
+            <input type="text" class="design" id="notOut" placeholder="Output Waveform">
+            <div class="line"></div>
+            <svg id="svgNot"></svg>
+        </div>
+        
+    </div>
+    <div id="graphArea">
+
+    </div>
+    <!-- <svg></svg> -->
+    <script src="newlogical.js"></script>
+</body>
+</html>

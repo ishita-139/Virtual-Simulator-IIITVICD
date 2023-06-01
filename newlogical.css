@@ -1,0 +1,60 @@
+/* svg{
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+body{
+    background-size: 100%;
+    background-image: url(./simple-pattern-with-css3.png);
+}
+
+#container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 96vh;
+    width: 96vw;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+    display:grid;
+}
+
+#norDiv{
+    margin-top: 3%;
+}
+#xorDiv{
+    margin-top: 3%;
+}
+#notDiv{
+    margin-top: 3%;
+}
+.design{
+    border: 2px solid black;
+    background-color: rgba(172, 248, 223, 0.94);
+}
+
+#svgNor{
+    border: 2px solid black;
+    width: 80vw;
+}
+#svgXor{
+    border: 2px solid black;
+    width: 80vw;
+}
+#svgNot{
+    border: 2px solid black;
+    width: 80vw;
+}
+
+.line{
+    position: relative;
+    height: 5px;
+    width: 80vh;
+    top: 54%;
+    background-color: black;
+}

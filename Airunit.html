@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Air conditioning Unit Determination</title>	
+</head>
+
+<!-- CSS -->
+<style>
+body{text-align: center; background: linear-gradient(#34cbeb, white) center fixed; background-size: cover;}
+h1{font-size: 50px;}
+h2{font-size:30px;}
+h3{font-size:20px;}
+select{padding:10px 30px;}
+table{width: 5px; table-layout: fixed;}
+/* @keyframes example{animation: float 6s ease-in-out;} */
+div{border: 20px solid rgba(0, 0, 0, 0.3);background-clip: padding-box; box-shadow: 10px 10px 5px gray; animation-name: example; position: absolute; width: 1000px; height: 525px; left: 13.5%; top:10%; background: white; opacity: 0.97; }
+button{background-color: #34cbeb; border: none; color: black; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block;
+  font-size: 16px; margin: 4px 2px; cursor: pointer;}
+</style>
+<body >
+<!--#34cbeb url("background_blue_pattern.jpg") no-repeat-->
+<div>
+	<h1>Air Conditioning Unit </h1>	
+	
+	<form name="air">
+		<p>
+			<label>Enter value of Temperature in Fahrehnit: </lable>
+			<input type="number" id ="temp" name="temp" >
+			<br>
+			<BR>
+			<label>Enter value of humidity in percentage: </lable>
+					<input type="number" id ="hum" name="hum" min="0" max="100">
+			
+			<br>
+			<br>
+			<label>Enter Time of the Day: </lable>
+			<select name="length_day">				
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+					
+			</select>
+			<br>
+			<br>
+			<label>Enter Day of the Week: </lable>
+				<select name="day">				
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>	
+				</select>
+		</p>	
+	</form>
+	<button onclick="calculate()" autocomplete="off"><strong>Answer</strong></button>
+	<table style="width:100%">
+		<tr>
+			<th> Air conditioning unit is turned  </th>
+			
+		</tr>
+		<tr>
+			<td id="disp"></td>
+		</tr>
+	</table>
+	</div>
+	<!-- Javascript -->
+	<script type="text/javascript">
+			function calculate()
+			{
+				var t, length,h , ans,dayweek;
+				t=Number(document.air.temp.value);
+				length=Number(document.air.length_day.value);
+				h=Number(document.air.hum.value);
+				dayweek=Number(document.air.day.value);
+				ans=((t>78 && length>8 && length<17) ||(h>85 && t>78 && length>8 && length<17)|| (h>85 && t>78 && (dayweek==6 || dayweek==7) )|| (h>85 && (dayweek==6 || dayweek==7)))?"ON":"OFF";
+				document.getElementById("disp").innerHTML=ans;
+			}	
+	</script>			
+</body>	
+</html>	

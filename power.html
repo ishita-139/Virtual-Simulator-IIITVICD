@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Power Received  Calculator</title>	
+</head>
+<style>
+body{text-align: center; background: linear-gradient(#34cbeb, white) center fixed; background-size: cover;}
+h1{font-size: 50px;}
+h2{font-size:30px;}
+h3{font-size:20px;}
+select{padding:10px 30px;}
+table{width: 5px; table-layout: fixed;}
+/* @keyframes example{animation: float 6s ease-in-out;} */
+div{border: 20px solid rgba(0, 0, 0, 0.3);background-clip: padding-box; box-shadow: 10px 10px 5px gray; animation-name: example; position: absolute; width: 1000px; height: 525px; left: 13.5%; top:10%; background: white; opacity: 0.97; }
+button{background-color: #34cbeb; border: none; color: black; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block;
+  font-size: 16px; margin: 4px 2px; cursor: pointer;}
+
+
+</style>
+<body>
+<!--#34cbeb url("background_blue_pattern.jpg") no-repeat-->
+<div>
+	<h1>Power Transmitted Calculator </h1>	
+	<h3>Using Friis Equation</h3>
+	<h2>Received Power P<sub>r</sub> = P<sub>t</sub>  G<sub>t</sub>G<sub>r</sub> λ <sup>2</sup> / (4πd)<sup>2</sup></h2>	
+	<form name="friss">
+		<p>
+			<label>Enter value of Power transmitted in watts : </lable>
+			<input type="number" id ="pt" name="pt" >
+			<br>
+			<br>
+			<label>Enter value of wavelength of carrier in m: </lable>
+				<input type="number" id ="wave" name="wave" >
+			<br>
+			<br>
+			<label>Enter distance d in m: </lable>
+				<input type="number" id ="distance" name="distance" >
+			<br>
+			<br>
+			<label>Enter value of received gain gr: </lable>
+				<input type="number" id ="gr" name="gr" >
+			<br>
+			<br>
+			<label>Enter value of transmitted gain: </lable>
+					<input type="number" id ="gt" name="gt" >			
+			
+			
+		</p>	
+	</form>
+	<button onclick="calculate()" autocomplete="off"><strong>Answer</strong></button>
+	<table style="width:100%">
+		<tr>
+			<th> Power received in watts is </th>
+			
+		</tr>
+		<tr>
+			<td id="disp"></td>
+		</tr>
+	</table>
+	</div>
+	<script type="text/javascript">
+			function calculate()
+			{
+				var dis,pt,wavelength,gainr,gaint, ans;
+				pt=Number(document.friss.pt.value);
+				dis=Number(document.friss.distance.value);
+				wavelength=Number(document.friss.wave.value);
+				gainr=Number(document.friss.gr.value);
+				gaint=Number(document.friss.gt.value);
+				ans=( pt * wavelength*gainr*gaint)/(4*dis*3.14);
+				document.getElementById("disp").innerHTML=ans;
+			}	
+	</script>			
+</body>	
+</html>	
